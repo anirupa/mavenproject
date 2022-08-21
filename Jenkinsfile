@@ -5,12 +5,13 @@ pipeline {
       steps {
         git 'https://github.com/swarupa1995/mavenproject.git'
       }
+    }
       stage("dev branch code"){
         steps{
           git branch: 'dev', url: 'https://github.com/swarupa1995/mavenproject.git'
         }
       }
-      stage("dev branch code"){
+      stage("build"){
         steps{
           sh "mvn clean install"       
         }

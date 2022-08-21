@@ -10,5 +10,10 @@ pipeline {
           git branch: 'dev', url: 'https://github.com/swarupa1995/mavenproject.git'
         }
       }
+      stage("dev branch code"){
+        steps{
+          sh "mvn clean install"       
+        }
+      }
     }
-      
+  }
